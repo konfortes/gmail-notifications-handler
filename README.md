@@ -1,1 +1,1 @@
-# gmail-notifications-handler
+# Gmail Notifications Handler
