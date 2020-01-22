@@ -43,13 +43,16 @@ func pushHandler(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	messagesMu.Lock()
-	defer messagesMu.Unlock()
-	// Limit to ten.
-	messages = append(messages, string(msg.Message.Data))
-	if len(messages) > maxMessages {
-		messages = messages[len(messages)-maxMessages:]
-	}
+	fmt.Printf("Got notification: %+v", msg)
+
+	w.WriteHeader(http.StatusOK)
+	// messagesMu.Lock()
+	// defer messagesMu.Unlock()
+	// // Limit to ten.
+	// messages = append(messages, string(msg.Message.Data))
+	// if len(messages) > maxMessages {
+	// 	messages = messages[len(messages)-maxMessages:]
+	// }
 }
 
 // test deploy
