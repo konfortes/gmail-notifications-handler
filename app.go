@@ -20,6 +20,7 @@ func main() {
 
 func registerRoutes() {
 	http.HandleFunc("/health", healthHandler)
+	http.HandleFunc("/pubsub/push", pushHandler)
 }
 
 func determineListenAddress() string {
